@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artilagency | Empowering Creators to Monetize Their Brands</title>
+    <meta name="description" content="Artilagency is a full-service digital marketing agency helping creators and brand owners scale their businesses through ads, web design, email marketing, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Particle background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">A</span>
+                <span class="logo-text">artilagency</span>
+            </a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#results">Results</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact" class="nav-cta">Get Started</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#results">Results</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact" class="mobile-cta">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-effects">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>The Future of Creator Growth</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Turn Your</span>
+                <span class="title-line gradient-text">Creative Vision</span>
+                <span class="title-line">Into Revenue</span>
+            </h1>
+            <p class="hero-subtitle">
+                We're not just another agency. We're your growth partners. From viral ads to stunning websites,
+                we handle everything so you can focus on what you do best — creating.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Start Your Journey</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    <span>Explore Services</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="500">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Creators Scaled</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="50">0</span><span class="stat-suffix">M+</span>
+                    <span class="stat-label">Revenue Generated</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="98">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Client Retention</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee Section -->
+    <section class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>DIGITAL MARKETING</span>
+                <span class="marquee-dot"></span>
+                <span>PAID ADS</span>
+                <span class="marquee-dot"></span>
+                <span>WEB DESIGN</span>
+                <span class="marquee-dot"></span>
+                <span>EMAIL MARKETING</span>
+                <span class="marquee-dot"></span>
+                <span>CONTENT STRATEGY</span>
+                <span class="marquee-dot"></span>
+                <span>BRAND DEVELOPMENT</span>
+                <span class="marquee-dot"></span>
+                <span>SOCIAL MEDIA</span>
+                <span class="marquee-dot"></span>
+                <span>SEO OPTIMIZATION</span>
+                <span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>DIGITAL MARKETING</span>
+                <span class="marquee-dot"></span>
+                <span>PAID ADS</span>
+                <span class="marquee-dot"></span>
+                <span>WEB DESIGN</span>
+                <span class="marquee-dot"></span>
+                <span>EMAIL MARKETING</span>
+                <span class="marquee-dot"></span>
+                <span>CONTENT STRATEGY</span>
+                <span class="marquee-dot"></span>
+                <span>BRAND DEVELOPMENT</span>
+                <span class="marquee-dot"></span>
+                <span>SOCIAL MEDIA</span>
+                <span class="marquee-dot"></span>
+                <span>SEO OPTIMIZATION</span>
+                <span class="marquee-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2 class="section-title">Everything You Need to <span class="gradient-text">Dominate</span></h2>
+                <p class="section-subtitle">We offer end-to-end solutions tailored for creators and brand owners who are ready to scale.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Paid Advertising</h3>
+                    <p>Meta, TikTok, Google, YouTube — we master them all. Our data-driven campaigns turn ad spend into explosive ROI.</p>
+                    <ul class="service-features">
+                        <li>Campaign Strategy</li>
+                        <li>Creative Production</li>
+                        <li>A/B Testing</li>
+                        <li>Performance Analytics</li>
+                    </ul>
+                    <div class="service-glow"></div>
+                </div>
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18M9 21V9"/>
+                        </svg>
+                    </div>
+                    <h3>Web Design & Development</h3>
+                    <p>Stunning, conversion-optimized websites that turn visitors into customers. Built for speed, designed for impact.</p>
+                    <ul class="service-features">
+                        <li>Custom Design</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Landing Pages</li>
+                        <li>Mobile Optimization</li>
+                    </ul>
+                    <div class="service-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <h3>Email Marketing</h3>
+                    <p>Build relationships that convert. Our email sequences nurture leads and drive repeat purchases on autopilot.</p>
+                    <ul class="service-features">
+                        <li>Automation Flows</li>
+                        <li>Newsletter Design</li>
+                        <li>List Management</li>
+                        <li>Conversion Optimization</li>
+                    </ul>
+                    <div class="service-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                        </svg>
+                    </div>
+                    <h3>Organic Social Growth</h3>
+                    <p>Grow your following authentically. We create viral content strategies that build engaged communities.</p>
+                    <ul class="service-features">
+                        <li>Content Strategy</li>
+                        <li>Community Management</li>
+                        <li>Influencer Collabs</li>
+                        <li>Trend Analysis</li>
+                    </ul>
+                    <div class="service-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                        </svg>
+                    </div>
+                    <h3>Brand Strategy</h3>
+                    <p>Define your unique voice and position in the market. We help you stand out in a crowded digital landscape.</p>
+                    <ul class="service-features">
+                        <li>Brand Identity</li>
+                        <li>Market Research</li>
+                        <li>Positioning Strategy</li>
+                        <li>Visual Guidelines</li>
+                    </ul>
+                    <div class="service-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                            <line x1="12" y1="2" x2="12" y2="22"/>
+                        </svg>
+                    </div>
+                    <h3>Custom Development</h3>
+                    <p>From apps to automations, we build the tech that powers your business growth.</p>
+                    <ul class="service-features">
+                        <li>Web Applications</li>
+                        <li>API Integrations</li>
+                        <li>Automation Systems</li>
+                        <li>Custom Tools</li>
+                    </ul>
+                    <div class="service-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content" data-aos="fade-right">
+                    <span class="section-tag">Who We Are</span>
+                    <h2 class="section-title">Built by Creators, <span class="gradient-text">For Creators</span></h2>
+                    <p>We understand the creator economy because we've lived it. Artilagency was founded with one mission: to give creators and brand owners the same marketing firepower as Fortune 500 companies.</p>
+                    <p>Our team combines creative genius with technical expertise. We don't just run campaigns — we build empires.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Results-Driven</h4>
+                                <p>Every strategy is backed by data and optimized for ROI</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Dedicated Team</h4>
+                                <p>Your personal growth squad, available when you need us</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Fast Execution</h4>
+                                <p>We move at the speed of social media trends</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="visual-card">
+                        <div class="visual-bg"></div>
+                        <div class="visual-content">
+                            <div class="floating-element elem-1">
+                                <span>+340%</span>
+                                <small>Avg. ROI</small>
+                            </div>
+                            <div class="floating-element elem-2">
+                                <span>24/7</span>
+                                <small>Support</small>
+                            </div>
+                            <div class="floating-element elem-3">
+                                <span>14 Days</span>
+                                <small>Avg. Results</small>
+                            </div>
+                            <div class="central-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Case Studies</span>
+                <h2 class="section-title">Real Results, <span class="gradient-text">Real Growth</span></h2>
+                <p class="section-subtitle">Don't take our word for it — see what we've achieved for creators just like you.</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card" data-aos="zoom-in">
+                    <div class="result-header">
+                        <span class="result-category">E-commerce Creator</span>
+                        <span class="result-industry">Fashion & Lifestyle</span>
+                    </div>
+                    <div class="result-metrics">
+                        <div class="metric">
+                            <span class="metric-value">$2.3M</span>
+                            <span class="metric-label">Revenue Generated</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">12x</span>
+                            <span class="metric-label">ROAS Achieved</span>
+                        </div>
+                    </div>
+                    <p class="result-description">"Artilagency took my brand from $50K/month to $200K/month in just 90 days. Their ad strategy is unmatched."</p>
+                    <div class="result-glow"></div>
+                </div>
+                <div class="result-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="result-header">
+                        <span class="result-category">Content Creator</span>
+                        <span class="result-industry">Fitness & Health</span>
+                    </div>
+                    <div class="result-metrics">
+                        <div class="metric">
+                            <span class="metric-value">500K</span>
+                            <span class="metric-label">New Followers</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">8x</span>
+                            <span class="metric-label">Engagement Rate</span>
+                        </div>
+                    </div>
+                    <p class="result-description">"They helped me build a community that actually buys. My course launch did $400K in the first week."</p>
+                    <div class="result-glow"></div>
+                </div>
+                <div class="result-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="result-header">
+                        <span class="result-category">Brand Owner</span>
+                        <span class="result-industry">Tech & SaaS</span>
+                    </div>
+                    <div class="result-metrics">
+                        <div class="metric">
+                            <span class="metric-value">340%</span>
+                            <span class="metric-label">Traffic Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$1.8M</span>
+                            <span class="metric-label">ARR Growth</span>
+                        </div>
+                    </div>
+                    <p class="result-description">"The website they built converts like crazy. Combined with their email flows, we've 4x'd our customer LTV."</p>
+                    <div class="result-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">Loved by <span class="gradient-text">Creators</span></h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>Working with Artilagency was the best decision I made for my brand. They understand creators on a different level. The results speak for themselves — my business has completely transformed.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JD</div>
+                            <div class="author-info">
+                                <span class="author-name">Jordan Davis</span>
+                                <span class="author-title">Lifestyle Creator, 2M+ Followers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>I've worked with 5+ agencies before. None of them come close to what Artilagency delivers. They're fast, creative, and actually care about my success. Truly a partner, not just a vendor.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SK</div>
+                            <div class="author-info">
+                                <span class="author-name">Sarah Kim</span>
+                                <span class="author-title">E-commerce Brand Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>The team at Artilagency helped me go from struggling creator to full-time entrepreneur. Their email marketing alone generates $50K/month for me now. Absolute game-changers.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MR</div>
+                            <div class="author-info">
+                                <span class="author-name">Marcus Robinson</span>
+                                <span class="author-title">Digital Course Creator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to <span class="gradient-text">Scale Your Brand</span>?</h2>
+                <p>Join hundreds of creators who've transformed their businesses with Artilagency. Your growth story starts with one conversation.</p>
+                <a href="#contact" class="btn btn-primary btn-large">
+                    <span>Book Your Free Strategy Call</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="cta-bg-effects">
+                <div class="cta-orb cta-orb-1"></div>
+                <div class="cta-orb cta-orb-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Let's Build <span class="gradient-text">Something Great</span></h2>
+                    <p>Fill out the form and our team will get back to you within 24 hours. We're excited to learn about your brand and explore how we can help you grow.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="contact-label">Email Us</span>
+                                <a href="mailto:michaelakadu@gmail.com">michaelakadu@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <span>Global — We work with creators worldwide</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form id="contact-form" class="contact-form" action="https://formsubmit.co/michaelakadu@gmail.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Artilagency Lead!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business/Brand Name</label>
+                            <input type="text" id="business" name="business" placeholder="Your Brand">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="paid-ads">Paid Advertising</option>
+                                <option value="web-design">Web Design & Development</option>
+                                <option value="email-marketing">Email Marketing</option>
+                                <option value="organic-social">Organic Social Growth</option>
+                                <option value="brand-strategy">Brand Strategy</option>
+                                <option value="custom-development">Custom Development</option>
+                                <option value="full-service">Full Service Package</option>
+                            </select>
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Goals</label>
+                            <textarea id="message" name="message" rows="4" placeholder="What are you looking to achieve?"></textarea>
+                            <div class="input-glow"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="form-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">A</span>
+                        <span class="logo-text">artilagency</span>
+                    </a>
+                    <p>Empowering creators to monetize their brands and build lasting digital empires.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="#services">Paid Ads</a>
+                        <a href="#services">Web Design</a>
+                        <a href="#services">Email Marketing</a>
+                        <a href="#services">Social Growth</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#about">About Us</a>
+                        <a href="#results">Case Studies</a>
+                        <a href="#testimonials">Testimonials</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Artilagency. All rights reserved.</p>
+                <p>Built with passion for creators.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
