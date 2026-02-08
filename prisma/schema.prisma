@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Agent {
+  id             String   @id @default(uuid())
+  name           String
+  greeting       String   @default("Hello! How can I help you today?")
+  systemPrompt   String   @default("You are a helpful customer service agent. Be polite, concise, and helpful.")
+  voice          String   @default("alloy")
+  language       String   @default("en-US")
+  model          String   @default("gpt-4o")
+  temperature    Float    @default(0.7)
+  maxTokens      Int      @default(300)
+  active         Boolean  @default(true)
+  phoneNumber    String?
+  transferNumber String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  knowledgeBase KnowledgeEntry[]
+  calls         Call[]
+}
+
+model KnowledgeEntry {
+  id        String   @id @default(uuid())
+  agentId   String
+  title     String
+  content   String
+  category  String   @default("general")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  agent Agent @relation(fields: [agentId], references: [id], onDelete: Cascade)
+}
+
+model Call {
+  id            String    @id @default(uuid())
+  agentId       String
+  callerNumber  String?
+  status        String    @default("queued")
+  direction     String    @default("inbound")
+  duration      Int       @default(0)
+  summary       String?
+  sentiment     String?
+  resolved      Boolean   @default(false)
+  transferredTo String?
+  recordingUrl  String?
+  cost          Float     @default(0)
+  startedAt     DateTime  @default(now())
+  endedAt       DateTime?
+
+  agent    Agent     @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  messages Message[]
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  callId    String
+  role      String
+  content   String
+  timestamp DateTime @default(now())
+
+  call Call @relation(fields: [callId], references: [id], onDelete: Cascade)
+}
+
+model Contact {
+  id          String    @id @default(uuid())
+  phoneNumber String    @unique
+  name        String?
+  email       String?
+  company     String?
+  notes       String?
+  totalCalls  Int       @default(0)
+  lastCallAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

@@ -1,0 +1,6 @@
+node_modules
+.next
+.env
+*.db
+/src/generated/prisma
+prisma/seed.mjs
