@@ -14,13 +14,13 @@ export async function POST(req: Request) {
   const agent = await prisma.agent.create({
     data: {
       name: body.name || "New Agent",
-      greeting: body.greeting,
-      systemPrompt: body.systemPrompt,
-      voice: body.voice,
-      language: body.language,
-      model: body.model,
-      phoneNumber: body.phoneNumber,
-      transferNumber: body.transferNumber,
+      ...(body.greeting && { greeting: body.greeting }),
+      ...(body.systemPrompt && { systemPrompt: body.systemPrompt }),
+      ...(body.voice && { voice: body.voice }),
+      ...(body.language && { language: body.language }),
+      ...(body.model && { model: body.model }),
+      ...(body.phoneNumber && { phoneNumber: body.phoneNumber }),
+      ...(body.transferNumber && { transferNumber: body.transferNumber }),
     },
   });
   return NextResponse.json(agent, { status: 201 });
