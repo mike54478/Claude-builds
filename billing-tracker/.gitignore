@@ -1,0 +1,12 @@
+.env
+config/credentials.json
+config/service_account.json
+config/gmail_token.pickle
+receipts/*.jpg
+receipts/*.jpeg
+receipts/*.png
+receipts/*.heic
+receipts/processed/
+__pycache__/
+*.pyc
+.DS_Store
