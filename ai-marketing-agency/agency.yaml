@@ -1,0 +1,40 @@
+# Declarative agency configuration: model routing, autonomy, guardrails.
+# The runtime loads this at startup; changing an agent's model or autonomy
+# tier is a config change, not a deploy.
+
+models:
+  orchestration: claude-opus-4-8      # CEO, Strategist, Sales, Customer Success
+  production: claude-sonnet-4-6       # Media Buyer, Copywriter, CRM sequences
+  routing: claude-haiku-4-5           # classification, triage, compaction
+
+defaults:
+  effort: high
+  max_tokens: 16000
+
+agents:
+  ceo:            { model: orchestration, effort: high }
+  sales:          { model: orchestration, effort: high }
+  strategist:     { model: orchestration, effort: high, max_tokens: 32000 }
+  media_buyer:    { model: production,    effort: medium }
+  copywriter:     { model: production,    effort: medium }
+  crm:            { model: production,    effort: medium }
+  reporting:      { model: production,    effort: medium }   # nightly runs move to Batches API in Phase 2
+  customer_success: { model: orchestration, effort: high }
+
+guardrails:
+  max_daily_spend_per_client_usd: 1000
+  max_single_budget_change_pct: 50
+  max_platform_mutations_per_account_per_hour: 30
+  consent_required_for_sends: true
+
+# Autonomy matrix: risk class -> approver, per trust tier.
+# Approvers: auto | ceo | human. R4 is human at every tier, by design.
+autonomy:
+  tier0: { R0: auto, R1: ceo,   R2: human, R3: human, R4: human }
+  tier1: { R0: auto, R1: auto,  R2: ceo,   R3: human, R4: human }
+  tier2: { R0: auto, R1: auto,  R2: auto,  R3: ceo,   R4: human }
+
+escalation:
+  sev1_ack_minutes: 30
+  sev0_ack_minutes: 5
+  dead_mans_switch_hours: 24
