@@ -1,0 +1,6 @@
+{
+  "crons": [
+    { "path": "/api/cron/process-requests", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/analyze-reviews", "schedule": "*/10 * * * *" }
+  ]
+}
