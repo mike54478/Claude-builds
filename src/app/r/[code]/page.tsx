@@ -1,8 +1,8 @@
-import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
-import { db } from "@/db";
-import { locations, reviewRequests } from "@/db/schema";
+import { DEMO_MODE, demoBusiness } from "@/lib/demo";
 import { FeedbackForm } from "./feedback-form";
+
+export const dynamic = "force-dynamic";
 
 /**
  * The dual-CTA page. Compliance lives here: BOTH options are always shown
@@ -15,6 +15,25 @@ export default async function RequestLandingPage({
   params: Promise<{ code: string }>;
 }) {
   const { code } = await params;
+
+  // Demo: what a customer sees after receiving a review-request text.
+  if (code === "demo" || DEMO_MODE) {
+    return (
+      <Page
+        businessName={demoBusiness.name}
+        code="demo"
+        reviewHref="#"
+        demo
+      />
+    );
+  }
+
+  const [{ db }, { locations, reviewRequests }, { eq }] = await Promise.all([
+    import("@/db"),
+    import("@/db/schema"),
+    import("drizzle-orm"),
+  ]);
+
   const request = await db.query.reviewRequests.findFirst({
     where: eq(reviewRequests.shortCode, code),
   });
@@ -26,18 +45,45 @@ export default async function RequestLandingPage({
   if (!location) notFound();
 
   return (
+    <Page
+      businessName={location.name}
+      code={code}
+      reviewHref={`/api/r/${code}/review`}
+    />
+  );
+}
+
+function Page({
+  businessName,
+  code,
+  reviewHref,
+  demo = false,
+}: {
+  businessName: string;
+  code: string;
+  reviewHref: string;
+  demo?: boolean;
+}) {
+  return (
     <main className="mx-auto max-w-md px-6 py-16">
+      {demo && (
+        <p className="mb-6 rounded-lg border border-blue-200 bg-blue-50 px-4 py-2 text-xs text-blue-800">
+          <strong>Demo</strong> — this is the page your customer lands on from
+          the review-request text. <a href="/dashboard" className="underline">Back to dashboard</a>
+        </p>
+      )}
       <h1 className="text-2xl font-bold">How did we do?</h1>
       <p className="mt-2 text-stone-600">
-        Thanks for choosing {location.name}. Your feedback helps us — either way
+        Thanks for choosing {businessName}. Your feedback helps us — either way
         you share it.
       </p>
 
       <a
-        href={`/api/r/${code}/review`}
+        href={reviewHref}
         className="mt-8 block rounded-xl bg-stone-900 px-5 py-4 text-center font-medium text-white hover:bg-stone-700"
       >
         ⭐ Leave a public review
+        {demo && <span className="block text-xs font-normal text-stone-300">(goes to Google in the real product)</span>}
       </a>
 
       <div className="my-6 flex items-center gap-3 text-xs text-stone-400">
@@ -46,7 +92,7 @@ export default async function RequestLandingPage({
         <div className="h-px flex-1 bg-stone-200" />
       </div>
 
-      <FeedbackForm code={code} businessName={location.name} />
+      <FeedbackForm code={code} businessName={businessName} demo={demo} />
     </main>
   );
 }

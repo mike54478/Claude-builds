@@ -21,14 +21,14 @@ export default function LandingPage() {
           href="/dashboard"
           className="rounded-lg bg-stone-900 px-5 py-3 text-sm font-medium text-white hover:bg-stone-700"
         >
-          Start free trial
+          View live demo
         </Link>
-        <a
-          href="mailto:founders@repruv.com"
+        <Link
+          href="/r/demo"
           className="rounded-lg border border-stone-300 px-5 py-3 text-sm font-medium hover:bg-stone-100"
         >
-          Get a free reputation audit
-        </a>
+          See what customers get
+        </Link>
       </div>
       <div className="mt-20 grid gap-8 sm:grid-cols-3">
         {[

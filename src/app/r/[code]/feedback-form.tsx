@@ -5,9 +5,11 @@ import { useState } from "react";
 export function FeedbackForm({
   code,
   businessName,
+  demo = false,
 }: {
   code: string;
   businessName: string;
+  demo?: boolean;
 }) {
   const [body, setBody] = useState("");
   const [rating, setRating] = useState<number | null>(null);
@@ -15,6 +17,10 @@ export function FeedbackForm({
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (demo) {
+      setState("done");
+      return;
+    }
     setState("sending");
     const res = await fetch("/api/feedback", {
       method: "POST",
